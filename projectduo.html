@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gucci | A New Signature</title>
+</head>
+<body style="background-color:#f5f5f5; margin:0; font-family:'Times New Roman', serif; color:#000;">
+
+
+  <nav style="display:flex; justify-content:space-between; align-items:center; background-color:white; padding:15px 40px; position:sticky; top:0; border-bottom:1px solid #ccc;">
+    <button style="border:none; background:transparent; font-weight:bold; cursor:pointer;">+ Contact Us</button>
+    <h1 style="font-size:45px; letter-spacing:5px;">GUCCI</h1>
+    <div>
+      <button style="border:none; background:transparent; font-weight:bold; cursor:pointer;">Search</button>
+      <button style="border:none; background:transparent; font-weight:bold; cursor:pointer;">Account</button>
+      <button style="border:none; background:transparent; font-weight:bold; cursor:pointer;">Cart</button>
+    </div>
+  </nav>
+
+
+  <header style="position:relative; text-align:center;">
+    <img src="/images/back1.jpg" alt="Gucci Hero" style="width:100%; height:auto; object-fit:cover;">
+    <div style="position:absolute; bottom:60px; width:100%; color:white; text-shadow:0 2px 6px rgba(0,0,0,0.6);">
+      <h2 style="font-size:60px; letter-spacing:3px;">HANDBAGS</h2>
+      <p style="font-size:18px;">Explore the collection of timeless luxury.</p>
+    </div>
+  </header>
+
+
+  <section style="text-align:center; padding:60px 20px;">
+    <h2 style="font-size:32px; margin-bottom:15px;">Seasonal Narratives</h2>
+    <p style="font-size:18px;">Shop a series of unique curations, where inspiration meets wardrobe essentials of the House.</p>
+  </section>
+
+
+  <section style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; padding:40px;">
+    <div style="text-align:center; max-width:350px;">
+      <img src="/images/no2.jpg" alt="Suede Fall Bag" style="width:100%; border-radius:8px;">
+      <p style="margin-top:15px; font-size:18px;">A Touch Of Suede For Fall</p>
+    </div>
+    <div style="text-align:center; max-width:350px;">
+      <img src="/images/no3.jpg" alt="Women's Fall Shoes" style="width:100%; border-radius:8px;">
+      <p style="margin-top:15px; font-size:18px;">NEW IN: Women's Fall Winter Shoes</p>
+    </div>
+    <div style="text-align:center; max-width:350px;">
+      <img src="/images/IMG-20251012-WA0048.jpg" alt="Men's Boots" style="width:100%; border-radius:8px;">
+      <p style="margin-top:15px; font-size:18px;">Men's Boots For Fall</p>
+    </div>
+  </section>
+
+  <
+  <section style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; background-color:white; padding:80px 40px; gap:40px;">
+    <img src="/images/no4.jpg" alt="Gucci Feature" style="width:600px; border-radius:10px;">
+    <div style="max-width:400px;">
+      <h2 style="font-size:36px; margin-bottom:10px;">GUCCI: LA FAMIGLIA</h2>
+      <p style="font-size:18px; margin-bottom:20px;">A study of "Gucciness" — timeless design and heritage craft.</p>
+      <button style="background-color:black; color:white; border:none; padding:12px 24px; cursor:pointer; font-size:16px; border-radius:5px;">Discover The Collection</button>
+    </div>
+  </section>
+
+ 
+  <footer style="background-color:black; color:white; text-align:center; padding:60px 20px;">
+    <h2 style="font-size:28px; margin-bottom:15px;">SIGN UP FOR GUCCI UPDATES</h2>
+    <p style="font-size:16px; margin-bottom:20px;">Get exclusive updates on the collection's launch, personalized communication, and the House's latest news.</p>
+    <button style="background:transparent; border:1px solid white; color:white; padding:10px 30px; cursor:pointer; font-size:16px;">+ Subscribe</button>
+  </footer>
+  <script>
+   
+function createModal(id, title, content) {
+  const overlay = document.createElement("div");
+  overlay.id = id;
+  overlay.style.cssText = `
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  `;
+
+  const modal = document.createElement("div");
+  modal.style.cssText = `
+    background: white;
+    color: black;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+  `;
+
+  const heading = document.createElement("h2");
+  heading.textContent = title;
+  heading.style.marginBottom = "20px";
+
+  const body = document.createElement("p");
+  body.textContent = content;
+  body.style.fontSize = "16px";
+  body.style.lineHeight = "1.5";
+
+  const closeBtn = document.createElement("button");
+  closeBtn.textContent = "Close";
+  closeBtn.style.cssText = `
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+  `;
+  closeBtn.onclick = () => closeModal(id);
+
+  modal.appendChild(heading);
+  modal.appendChild(body);
+  modal.appendChild(closeBtn);
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+}
+
+
+function openModal(id) {
+  const overlay = document.getElementById(id);
+  if (!overlay) return;
+  overlay.style.opacity = "1";
+  overlay.style.pointerEvents = "auto";
+  const modal = overlay.querySelector("div");
+  modal.style.transform = "translateY(0)";
+}
+
+
+function closeModal(id) {
+  const overlay = document.getElementById(id);
+  if (!overlay) return;
+  overlay.style.opacity = "0";
+  overlay.style.pointerEvents = "none";
+  const modal = overlay.querySelector("div");
+  modal.style.transform = "translateY(20px)";
+}
+
+
+window.addEventListener("click", (e) => {
+  const overlays = document.querySelectorAll("div[id$='Modal']");
+  overlays.forEach((overlay) => {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll("div[id$='Modal']").forEach((overlay) => closeModal(overlay.id));
+  }
+});
+
+
+createModal("contactModal", "Contact Gucci", "For inquiries, please email support@gucci.com or call +1 (877) 482-2430.");
+createModal("searchModal", "Search", "Type your search query below to explore our collections.");
+createModal("accountModal", "Your Account", "Sign in to manage your orders and preferences.");
+createModal("cartModal", "Your Shopping Bag", "Your cart is currently empty. Start shopping to add new luxury pieces.");
+createModal("subscribeModal", "Subscribe", "Thank you for your interest. Enter your email on the homepage to receive Gucci updates.");
+
+
+document.querySelectorAll("button").forEach((btn) => {
+  const text = btn.textContent.trim();
+
+  if (text === "+ Contact Us") {
+    btn.addEventListener("click", () => openModal("contactModal"));
+  } else if (text === "Search") {
+    btn.addEventListener("click", () => openModal("searchModal"));
+  } else if (text === "Account") {
+    btn.addEventListener("click", () => openModal("accountModal"));
+  } else if (text === "Cart") {
+    btn.addEventListener("click", () => openModal("cartModal"));
+  } else if (text === "+ Subscribe") {
+    btn.addEventListener("click", () => openModal("subscribeModal"));
+  }
+});
+
+  </script>
+
+</body>
+</html>
